@@ -36,10 +36,10 @@ export default function Footer() {
             <p>Phone: 123-456-7890</p>
           </div>
         </div>
+      </footer>
         <div className="footer-bottom">
           <p>&copy; 2024 Expense Tracker App</p>
         </div>
-      </footer>
     </>
   );
 }

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import "./App.css";
 
 // ExpenseForm component for adding new expenses
 const ExpenseForm = ({ onAddExpense }) => {
@@ -21,8 +22,8 @@ const ExpenseForm = ({ onAddExpense }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="input__field">
+      <div className="input__data">
         <label>Title</label>
         <input
           type="text"
@@ -30,7 +31,7 @@ const ExpenseForm = ({ onAddExpense }) => {
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
-      <div>
+      <div className="input__data">
         <label>Amount</label>
         <input
           type="number"
@@ -76,11 +77,29 @@ const App = () => {
     );
   };
 
+
+
+
   return (
     <>
-    <Header/>
-      <div>
-        <h1>Expense Tracker</h1>
+      <div className="main__page">
+        <div>
+          <img src="./wallet.png" className="hero__image"></img>
+        </div>
+
+        <div className="hero_slogan">
+          <div className="hero_slogan1">TRACK EVERY PENNY</div>
+        </div>
+
+        <Header />
+        
+        <div className="hero_rectangle_1"></div>
+        <div className="hero_rectangle_2"></div>
+        ---------------------------------------------------
+        <h1 className="hero__title">Expense Tracker</h1>
+      </div>
+      <div className="section__page"></div>
+      {/* <div className="main">
         <ExpenseForm onAddExpense={handleAddExpense} />
         <div>
           {expenses.map((expense) => (
@@ -91,8 +110,8 @@ const App = () => {
             />
           ))}
         </div>
-      </div>
-      <Footer/>
+      </div> */}
+      <Footer />
     </>
   );
 };

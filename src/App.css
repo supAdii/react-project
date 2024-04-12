@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+
+body {
+  color: rgba(164, 167, 171, 0.721);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* mainpage */
+.main__page {
+  position: relative;
+  width: 100dvw;
+  height: 160dvh;
+  overflow: hidden;
+  background: radial-gradient(rgba(225, 178, 9, 0.29), rgba(55, 55, 55, 0.375));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section__page {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.hero__title {
+  color: rgb(240, 248, 255);
+  font-size: 80px;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.424);
+  margin: 5%;
+  padding-bottom: 5%;
+  writing-mode: vertical-lr;
+}
+
+.main {
+  padding-left: 5%;
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-content: center;
+  background-image: url("https://icons8.com/icon/73vBxoCBN3rM/account");
+}
+
+.input__field {
+  padding: 8px;
+  width: 400px;
+  height: 40dvh;
+  background-color: rgb(126, 126, 126);
+  color: rgb(34, 34, 34);
+  border-radius: 10px;
+  box-shadow: 15px 15px 15px black;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  place-content: center;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.input__data {
+  width: 300px;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
+}
+
+button {
+  background-color: rgb(34, 34, 34);
+  border-radius: 20px;
+  height: 32px;
   color: white;
+  cursor: pointer;
+  border: 0;
 }
 
-.App-link {
-  color: #61dafb;
+
+input {
+  width: 200px;
+  height: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
+/* Designs*/
+
+.hero_rectangle_1,
+.hero_rectangle_2 {
+  position: absolute;
+  left: 4%;
+  z-index: -1;
+  background-color: #76885B;
+  height: 800px;
+  width: 400px;
+  box-shadow: -15px 15px 10px rgba(0, 0, 0, 0.31);
+}
+
+.hero_rectangle_2 {
+  top: 28%;
+  left: 30%;
+  z-index: -2;
+  background-color: #627254bf;
+  transform: rotate(90deg);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.21);
+  filter: opacity(0.8);
+}
+
+.hero__image{
+  position: absolute;
+    height: 1000px;
+    width: 1000px;
+    z-index: 1;
+    left: 30%;
+    top: 10%;
+    background: transparent;
+    filter: drop-shadow(-20px 50px 20px rgba(17, 17, 16, 0.597));
+}
+
+.hero__image:hover{
+    animation: shake 0.2s ease-in-out forwards;
+    cursor: pointer;
+}
+
+.hero_slogan {
+  position: absolute;
+  top: 66%;
+  left: 59%;
+  width: 80%;
+  height: 30px;
+  background-color:rgba(126, 126, 126, 0);
+  transform: rotate(90deg);
+}
+
+
+.hero_slogan1{ 
+  position: absolute;
+  top: 5%;
+  left: -22.5%;
+  width: 1800px;
+  font-size: 8rem;
+  color: rgb(240, 248, 255);
+  text-shadow: 0px 150px 0px black,
+  0px 300px 0px rgb(240, 248, 255),
+  0px 300px 0px rgb(240, 248, 255);
+  /* animation: shake 20s ease-in-out infinite; */
+}
+
+
+@keyframes shake {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
+
