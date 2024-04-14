@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import * as database from "../../../database";
+import * as database from "../../../database"
+import expenseTrackerLogo from './fullLogo.png';
 
 export default function HomePage() {
   const [data, setData] = useState([]);
@@ -31,7 +32,13 @@ export default function HomePage() {
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
         ---------------------------------------------------
-        <h1 className="hero__title">Expense Tracker</h1>
+        <h1 className="hero__title">
+          <img src={expenseTrackerLogo} alt="Expense Tracker Logo" style={{ 
+            maxWidth: '100%', 
+            marginLeft: '-58px',
+            height: 'auto' 
+          }} />
+        </h1>
       </div>
       <div className="section__page">
         <h3>Here is the data from the db:</h3>
