@@ -1,6 +1,7 @@
 import React from "react";
 import "./main.scss";
 import { Link } from "react-router-dom";
+import mainLogo from "./mainLogo.png";
 
 import "../../../Styles/App.css";
 
@@ -10,7 +11,14 @@ export default function Header() {
     <>
       <header className="header">
         <div className="header-container">
-          <h1 className="logo">Expense Tracker</h1>
+          <h1 className="logo"><img src={mainLogo} alt= "Main Logo" style={{ 
+              maxWidth: '80%', 
+              height: 'auto', 
+              maxHeight: '200px', 
+              marginTop: '13px',
+              marginLeft: '-50px',
+            }} 
+ /></h1>
           <nav className="nav-menu">
             <ul>
               <li>
