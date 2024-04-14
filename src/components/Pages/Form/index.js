@@ -13,10 +13,18 @@ const ExpenseForm = ({ onAddExpense }) => {
     if (!where || !amount || !when) return;
     const expense = {
       where,
-      amount: +amount,
+      amount,
       when,
     };
     onAddExpense(expense);
+    setWhere("");
+    setAmount("");
+    setWhen("");
+  };
+
+  const handleFormClear = (e) => {
+    e.preventDefault();
+
     setWhere("");
     setAmount("");
     setWhen("");
@@ -49,8 +57,8 @@ const ExpenseForm = ({ onAddExpense }) => {
         <label>Amount:</label>
         <input
           type="number"
-          min="0.01"
-          step="0.01"
+          min="1"
+          step="10"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           placeholder="Enter how much you spent."
@@ -59,6 +67,7 @@ const ExpenseForm = ({ onAddExpense }) => {
       </div>
 
       <button type="submit">Add Expense</button>
+      <button onClick={handleFormClear}>Clear</button>
     </form>
   );
 };
@@ -83,6 +92,7 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
 export default function Form() {
   const [expenses, setExpenses] = useState([]);
   const [data, setData] = useState([]);
+  const [totalAmount, setTotalAmount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -117,6 +127,15 @@ export default function Form() {
     database.deleteFromDb(id);
   };
 
+  const calculateTotalAmount = () => {
+    let totalVal = data.reduce(
+      (total, expense) => total + parseFloat(expense.amount),
+      0
+    );
+    // console.log("The total is:", totalVal);
+    setTotalAmount(totalVal);
+  };
+
   return (
     <div className="main">
       <ExpenseForm onAddExpense={handleAddExpense} />
@@ -142,6 +161,12 @@ export default function Form() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="totalAmountDiv">
+        <span>
+          <strong>Your total is: $</strong> {totalAmount}
+        </span>
       </div>
     </div>
   );
