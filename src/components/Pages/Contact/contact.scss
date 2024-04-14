@@ -1,35 +1,32 @@
-.main__page {
-    position: relative; /* Make it a relative positioned container */
-    height: 300px; /* You can adjust this value */
-    background-color: #f4f4f4; /* Background color of the main__page */
-    padding: 0 20px; /* Padding for spacing around content */
-  }
+
   
   .hero_rectangle_1 {
-    position: relative; /* Make it a relative positioned container */
+    position: absolute; /* Make it a relative positioned container */
     width: 200px; /* Decreased width */
     height: 100px; /* Decreased height */
     background-color: #76885b;
+    z-index: 11;
   }
   
   .hero__title {
-    position: absolute; /* Absolute positioning */
-    left: 50%; /* Align to the middle horizontally */
-    top: 50%; /* Align to the middle vertically */
-    transform: translate(-50%, -50%) rotate(-90deg); /* Center and rotate the title */
+    position: absolute; 
+    left: 57%; 
+    top: 40%; 
+    transform: translate(-50%, -50%) rotate(-90deg); 
     margin-left: -37%;
     margin-top: -6%;
-    // font-size: 24px; /* Adjust font size to match the rectangle's size */
-    color: #333; /* Text color */
+  
+    color: #333; 
   }
   
   
-  .content-box {
-    flex: 1; /* Take remaining space */
-    background-color: transparent; /* Set background color same as that of main__page */
+  .content_box {
+    display: grid; 
+    height: 60vh;
     padding: 20px;
     font-size: 16px;
-    color: #333; /* Text color for content */
+    background-color:#242121;
+    color: black;
   }
   
   .contact-details {

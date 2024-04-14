@@ -19,9 +19,10 @@ form {
     background-color: #242121;
     color: rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2em;
-    border-radius: 10px;
+    padding-left: 30%;
+    place-content: center;
+    grid-template-columns: 1fr 1fr;
+    // gap: 2em;
 }
 
 label {

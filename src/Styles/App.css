@@ -3,8 +3,9 @@
 body {
   font-family: "Montserrat", sans-serif;
   color: rgba(164, 167, 171, 0.721);
-
 }
+
+
 
 /* mainpage */
 .main__page {
@@ -16,15 +17,16 @@ body {
 }
 
 .section__page {
-  /* height: 80dvh; */
+ max-width: fit-content;
   overflow: hidden;
-  background: rgb(29, 29, 28);
+  background-color: #242121;
   color: white;
   font-weight: bold;
-  padding: 4%;
+  padding: 5%;
   display: grid;
-  gap: 4em;
-  grid-template-rows: 0 40em;
+  gap: 2em;
+  align-items: center;
+  margin-bottom: 5%;
 }
 
 .sectionpage__div1 {
@@ -33,7 +35,7 @@ body {
     display: flex;
     gap: 1em;
     justify-content: center;
-    padding: 2em;
+    padding: 4em;
     flex-wrap: wrap;
     list-style: none;
 }
@@ -73,6 +75,8 @@ body {
 
 .input__field {
   display: grid;
+  margin-left: 5%;
+  margin-bottom: 5%;
   justify-items: center;
   grid-template-columns: 1fr;
 }

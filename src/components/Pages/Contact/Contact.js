@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../Header';
 import './contact.scss'; 
 
 
@@ -9,11 +8,12 @@ const Contact = () => {
     <>
       {/* <div className="main__page"> */}
         {/* <Header /> */}
+
         <div className="hero_rectangle_1"></div>
         <h1 className="hero__title">Contact Us</h1>
       {/* </div>
      */}
-          <div className="content-box">
+          <div className="content_box">
             
             <p>
             Feel free to contact us if you have any questions or inquiries regarding our app.

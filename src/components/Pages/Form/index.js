@@ -80,7 +80,7 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
   );
 };
 
-export default function Form() {
+export default function Form({ id }) {
   const [expenses, setExpenses] = useState([]);
   const [data, setData] = useState([]);
 
@@ -100,11 +100,12 @@ export default function Form() {
 
   const handleAddExpense = (expense) => {
     setExpenses((prevExpenses) => [...prevExpenses, expense]);
+
     database.write(expense);
     console.log("Saved data", expense);
   };
 
-  const handleDeleteExpense = (id) => {
+  const handleDeleteExpense = () => {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== id)
     );
@@ -125,7 +126,7 @@ export default function Form() {
           <ExpenseItem
             key={id}
             expense={expense}
-            onDeleteExpense={() => handleDeleteExpense(expense.id)}
+            onDeleteExpense={handleDeleteExpense}
           />
         ))}
       </div>
@@ -133,12 +134,12 @@ export default function Form() {
       <div className="section__page">
         <h3>Your Expenses:</h3>
         <ul className="sectionpage__div1">
-          {data.map((val) => (
-            <li className="mylisting" key={val.id}>
+          {data.map((val, index) => (
+            <li className="mylisting" key={index}>
               <p>Total Spend: ${val.amount}</p>
               <p>On date {val.when}</p>
               <p>Spent At: {val.where}</p>
-              <button onClick={() => handleDataDelete(val.id)}>Delete</button>
+              <button onClick={handleDataDelete}>Delete</button>
             </li>
           ))}
         </ul>
