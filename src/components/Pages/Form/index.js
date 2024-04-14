@@ -1,5 +1,10 @@
 import React, { useState } from "react";
+<<<<<<< HEAD:src/components/Form/index.js
+import "./main.scss"
+import * as database from "../../database";
+=======
 import * as database from "../../../database";
+>>>>>>> 2879b5d498e576ed241b888b73af5042a6bb0612:src/components/Pages/Form/index.js
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [where, setWhere] = useState("");
@@ -20,10 +25,18 @@ const ExpenseForm = ({ onAddExpense }) => {
     setWhen("");
   };
 
+<<<<<<< HEAD:src/components/Form/index.js
+  const handleAddition = () => {
+    database.write('id');
+    console.log("New data passes is:", 'id')
+  }
+
+=======
+>>>>>>> 2879b5d498e576ed241b888b73af5042a6bb0612:src/components/Pages/Form/index.js
   return (
     <form onSubmit={handleSubmit} className="input__field">
       <div className="input__data">
-        <label>Title</label>
+        <label>Title:</label>
         <input
           type="text"
           value={where}
@@ -32,7 +45,7 @@ const ExpenseForm = ({ onAddExpense }) => {
       </div>
 
       <div className="input__data">
-        <label>Date</label>
+        <label>Date:</label>
         <input
           type="date"
           value={when}
@@ -41,7 +54,7 @@ const ExpenseForm = ({ onAddExpense }) => {
       </div>
 
       <div className="input__data">
-        <label>Amount</label>
+        <label>Amount:</label>
         <input
           type="number"
           min="0.01"
@@ -64,7 +77,7 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
   };
 
   return (
-    <div>
+    <div className="output__box">
       <h2>You spent on: {where}</h2>
       <p>Date: {when}</p>
       <p>Amount Spent: ${amount}</p>
@@ -94,7 +107,7 @@ export default function Form() {
   return (
     <div className="main">
       <ExpenseForm onAddExpense={handleAddExpense} />
-      <div>
+      <div  className="child1">
         {expenses.map((expense, id) => (
           <ExpenseItem
             key={id}
