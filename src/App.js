@@ -6,7 +6,7 @@ import "./App.css";
 import * as database from "./database";
 // import { refFromURL } from "firebase/database";
 
-// App component
+
 const App = () => {
   const [data, setData] =useState([]);
 
