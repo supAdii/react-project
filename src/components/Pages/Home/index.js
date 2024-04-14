@@ -1,16 +1,8 @@
-import React from "react";
-import Header from "./components/Pages/Header";
-import Form from "./components/Pages/Form";
-import Footer from "./components/Pages/Footer";
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import HomePage from "./components/Pages/Home";
-import About from "./components/Pages/About";
-import Contact from "./components/Pages/Contact/Contact";
-import Services from "./components/Pages/Services/services";
+import React, { useEffect, useState } from "react";
 
-const App = () => {
-<<<<<<< HEAD
+import * as database from "../../../database";
+
+export default function HomePage() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -36,17 +28,14 @@ const App = () => {
         <div className="hero_slogan">
           <div className="hero_slogan1">TRACK EVERY PENNY</div>
         </div>
-        <Header />
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
         ---------------------------------------------------
         <h1 className="hero__title">Expense Tracker</h1>
       </div>
       <div className="section__page">
-        <Form />
-      <div className="sectionpage__div1">
-        <h3>DATA FROM THE DATABASE:</h3>
-        <ul className="mylisting">
+        <h3>Here is the data from the db:</h3>
+        <ul>
           {data.map((val, index) => (
             <li key={index}>
               You spent ${val.amount} on the date {val.when} at {val.where}.
@@ -54,26 +43,7 @@ const App = () => {
             </li>
           ))}
         </ul>
-        </div>
       </div>
-
-=======
-  return (
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/form" element={<Form/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/service" element={<Services/>} />
-      </Routes>
-      {/* <HomePage/> */}
-      {/* <Form /> */}
->>>>>>> 2879b5d498e576ed241b888b73af5042a6bb0612
-      <Footer />
     </>
   );
-};
-
-export default App;
+}

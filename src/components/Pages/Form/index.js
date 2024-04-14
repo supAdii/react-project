@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+<<<<<<< HEAD:src/components/Form/index.js
 import "./main.scss"
 import * as database from "../../database";
+=======
+import * as database from "../../../database";
+>>>>>>> 2879b5d498e576ed241b888b73af5042a6bb0612:src/components/Pages/Form/index.js
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [where, setWhere] = useState("");
@@ -21,11 +25,14 @@ const ExpenseForm = ({ onAddExpense }) => {
     setWhen("");
   };
 
+<<<<<<< HEAD:src/components/Form/index.js
   const handleAddition = () => {
     database.write('id');
     console.log("New data passes is:", 'id')
   }
 
+=======
+>>>>>>> 2879b5d498e576ed241b888b73af5042a6bb0612:src/components/Pages/Form/index.js
   return (
     <form onSubmit={handleSubmit} className="input__field">
       <div className="input__data">
@@ -57,21 +64,16 @@ const ExpenseForm = ({ onAddExpense }) => {
         />
       </div>
 
-      <button type="submit" onClick={handleAddition}>Add Expense</button>
+      <button type="submit">Add Expense</button>
     </form>
   );
 };
 
-const ExpenseItem = ({ expense, onDeleteExpense, onUpdateExpense }) => {
+const ExpenseItem = ({ expense, onDeleteExpense}) => {
   const { id, where, amount, when } = expense;
 
   const handleDelete = () => {
     onDeleteExpense(id);
-  };
-
-  const handleUpdate = () => {
-    database.update(id);
-    onUpdateExpense(id);
   };
 
   return (
@@ -80,7 +82,6 @@ const ExpenseItem = ({ expense, onDeleteExpense, onUpdateExpense }) => {
       <p>Date: {when}</p>
       <p>Amount Spent: ${amount}</p>
       <button onClick={handleDelete}>Delete Data</button>
-      <button onClick={handleUpdate}>Edit Data</button>
     </div>
   );
 };
