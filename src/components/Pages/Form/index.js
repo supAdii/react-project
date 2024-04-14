@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import * as database from "../../../database";
 import "./main.scss";
+import Loading from "../Loading";
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [where, setWhere] = useState("");
@@ -75,7 +76,6 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
 
   const handleDelete = () => {
     onDeleteExpense(id);
-
   };
 
   return (
@@ -93,6 +93,8 @@ export default function Form() {
   const [data, setData] = useState([]);
   const [totalAmount, setTotalAmount] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -105,6 +107,8 @@ export default function Form() {
     };
 
     fetchData();
+
+    setIsLoading(false);
   }, []);
 
   const handleAddExpense = (expense) => {
@@ -126,16 +130,6 @@ export default function Form() {
     database.deleteFromDb(id);
   };
 
-
-  // const handleDataDelete = async (id) => {
-  //   try {
-  //     await database.deleteFromDb(id);
-  //     setData((prevData) => prevData.filter((item) => item.id !== id));
-  //   } catch (error) {
-  //     console.error("Error deleting data:", error);
-  //   }
-  // };
-
   useEffect(() => {
     const calculateTotalAmount = () => {
       let totalVal = data.reduce(
@@ -145,40 +139,47 @@ export default function Form() {
       setTotalAmount(totalVal);
     };
     calculateTotalAmount();
-  }, [data]); 
+  }, [data]);
 
   return (
-    <div className="main">
-      <ExpenseForm onAddExpense={handleAddExpense} />
-      <div className="child1">
-        {expenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            expense={expense}
-            onDeleteExpense={handleDeleteExpense}
-          />
-        ))}
-      </div>
-
-      <div className="section__page">
-        <h3>Your Expenses:</h3>
-        <ul className="sectionpage__div1">
-          {data.map((val) => (
-            <li className="mylisting" key={val.id}>
-              <p>Total Spend: ${val.amount}</p>
-              <p>On date {val.when}</p>
-              <p>Spent At: {val.where}</p>
-               <button onClick={() => handleDataDelete(val.id)}>Delete</button>
-            </li>
+    <>
+      <div className="main">
+        <ExpenseForm onAddExpense={handleAddExpense} />
+        <div className="child1">
+          {expenses.map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              expense={expense}
+              onDeleteExpense={handleDeleteExpense}
+            />
           ))}
-        </ul>
-      </div>
+        </div>
 
-      <div className="totalAmountDiv">
-        <p>
-          <strong>Your total is: $</strong> {totalAmount}
-        </p>
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <div className="section__page">
+            <h3>Your Expenses:</h3>
+            <ul className="sectionpage__div1">
+              {data.map((val) => (
+                <li className="mylisting" key={val.id}>
+                  <p>Total Spend: ${val.amount}</p>
+                  <p>On date {val.when}</p>
+                  <p>Spent At: {val.where}</p>
+                  <button onClick={() => handleDataDelete(val.id)}>
+                    Delete
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        <div className="totalAmountDiv">
+          <p>
+            <strong>Your total is: $</strong> {totalAmount}
+          </p>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Pages/Header";
 import Form from "./components/Pages/Form";
 import Footer from "./components/Pages/Footer";
@@ -13,13 +13,15 @@ const App = () => {
   return (
     <>
       <Header />
+
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
-        <Route path="/form" element={<Form/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/service" element={<Services/>} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/form" element={<Form />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/service" element={<Services />} />
       </Routes>
+
       <Footer />
     </>
   );

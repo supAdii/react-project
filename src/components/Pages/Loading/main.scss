@@ -1,0 +1,16 @@
+html,
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.loading-component {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #242121;
+  margin: 25%;
+}
