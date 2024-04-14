@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as database from "../../../database";
 import "./main.scss";
-import "../../../Styles/App.css";
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [where, setWhere] = useState("");
@@ -58,7 +57,6 @@ const ExpenseForm = ({ onAddExpense }) => {
         <input
           type="number"
           min="1"
-          step="10"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           placeholder="Enter how much you spent."
@@ -77,22 +75,23 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
 
   const handleDelete = () => {
     onDeleteExpense(id);
+
   };
 
   return (
     <div className="output__box">
-      <h2>You spent on: {where}</h2>
+      <h2>Your new spend is: {where}</h2>
       <p>Date: {when}</p>
       <p>Amount Spent: ${amount}</p>
-      <button onClick={handleDelete}>Delete Expense</button>
+      <button onClick={handleDelete}>Done</button>
     </div>
   );
 };
 
-export default function Form({ id }) {
+export default function Form() {
   const [expenses, setExpenses] = useState([]);
   const [data, setData] = useState([]);
-  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -115,35 +114,46 @@ export default function Form({ id }) {
     console.log("Saved data", expense);
   };
 
-  const handleDeleteExpense = () => {
+  const handleDeleteExpense = (id) => {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== id)
     );
-    database.deleteFromDb(id);
+    // database.deleteFromDb(id);
   };
 
   const handleDataDelete = (id) => {
     setData((prevData) => prevData.filter((item) => item.id !== id));
-    // Delete from database
     database.deleteFromDb(id);
   };
 
-  const calculateTotalAmount = () => {
-    let totalVal = data.reduce(
-      (total, expense) => total + parseFloat(expense.amount),
-      0
-    );
-    // console.log("The total is:", totalVal);
-    setTotalAmount(totalVal);
-  };
+
+  // const handleDataDelete = async (id) => {
+  //   try {
+  //     await database.deleteFromDb(id);
+  //     setData((prevData) => prevData.filter((item) => item.id !== id));
+  //   } catch (error) {
+  //     console.error("Error deleting data:", error);
+  //   }
+  // };
+
+  useEffect(() => {
+    const calculateTotalAmount = () => {
+      let totalVal = data.reduce(
+        (total, expense) => total + parseFloat(expense.amount),
+        0
+      );
+      setTotalAmount(totalVal);
+    };
+    calculateTotalAmount();
+  }, [data]); 
 
   return (
     <div className="main">
       <ExpenseForm onAddExpense={handleAddExpense} />
       <div className="child1">
-        {expenses.map((expense, id) => (
+        {expenses.map((expense) => (
           <ExpenseItem
-            key={id}
+            key={expense.id}
             expense={expense}
             onDeleteExpense={handleDeleteExpense}
           />
@@ -153,21 +163,21 @@ export default function Form({ id }) {
       <div className="section__page">
         <h3>Your Expenses:</h3>
         <ul className="sectionpage__div1">
-          {data.map((val, index) => (
-            <li className="mylisting" key={index}>
+          {data.map((val) => (
+            <li className="mylisting" key={val.id}>
               <p>Total Spend: ${val.amount}</p>
               <p>On date {val.when}</p>
               <p>Spent At: {val.where}</p>
-              <button onClick={handleDataDelete}>Delete</button>
+               <button onClick={() => handleDataDelete(val.id)}>Delete</button>
             </li>
           ))}
         </ul>
       </div>
 
       <div className="totalAmountDiv">
-        <span>
+        <p>
           <strong>Your total is: $</strong> {totalAmount}
-        </span>
+        </p>
       </div>
     </div>
   );
