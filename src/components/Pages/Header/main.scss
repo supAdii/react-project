@@ -1,73 +1,65 @@
 .header {
-    color: white;
-    width: 100dvw;
+  color: white;
+  // width: 100dvw;
+
+  .header-container {
+    background-color: #242121;
     display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
     justify-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
 
-  
-    .header-container {
-      background-color: rgba(34, 34, 34, 0.613);
-      z-index: 111;
-      position: fixed;
+    .imageDiv{
+      max-width: 30%;
+    }
+
+    .logo {
+      cursor: pointer;
+      max-width: 100%;
+    }
+
+    .logo:hover {
+      border-bottom: 1px solid #fff;
+    }
+
+    .nav-menu {
+      margin-left: 25%;
+    }
+
+    .nav-menu ul {
       display: grid;
-      grid-template-columns:  3fr 1fr;
-      place-content: center;
-      align-items: center;
-      // height: 44px;
-      // width: 450px;
-      padding: 2%;
-      margin-top: 20px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0);
-      border-radius: 20px;
-      box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.600);
-      text-shadow: 1px 1px 1px black;
-      transition: 200ms ease-in-out;
+      grid-template-columns: repeat(5, 35%);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-left: 20%;
 
-       
-      .logo {
-       
-        margin: 0;
-        cursor: pointer;
-        transition: 200ms ease-in-out;
-      }
+      li {
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 16px;
+        font-weight: bold;
 
-      .logo:hover {
-        transform: scale(1.0001);
-        text-shadow: 2px 2px 2px black;
-      }
-  
-      .nav-menu ul {
-        display: grid;
-        grid-template-columns: repeat(8, 70px);
-        list-style: none;
-        padding: 0;
-        margin: 0;
-  
-        li {
-          display: inline-block;
-          margin-left: 20px;
-          font-size: 16px;
-          font-weight: bold;
-  
-          a {
-            color: #fff;
-            text-decoration: none;
-  
-            &:hover {
-              text-decoration: underline;
-            }
+        a {
+          color: #fff;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
           }
         }
       }
     }
   }
-  
+}
 
-  .header-container:hover {
-    width: 40%;
-    cursor: pointer;
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns:  4fr 1fr;
-    height: 55px;
-  }
+// .header-container:hover {
+//   width: 40%;
+//   cursor: pointer;
+//   margin-top: 10px;
+//   display: grid;
+//   grid-template-columns:  4fr 1fr;
+//   height: 55px;
+// }

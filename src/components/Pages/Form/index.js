@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import * as database from "../../../database";
 import "./main.scss";
 import "../../../Styles/App.css";
@@ -59,7 +59,7 @@ const ExpenseForm = ({ onAddExpense }) => {
 };
 
 const ExpenseItem = ({ expense, onDeleteExpense }) => {
-  const {id, where, amount, when } = expense;
+  const { id, where, amount, when } = expense;
 
   const handleDelete = () => {
     onDeleteExpense(id);
@@ -77,6 +77,21 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
 
 export default function Form() {
   const [expenses, setExpenses] = useState([]);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedData = await database.load();
+        console.log("Loaded Data:", fetchedData);
+        setData(fetchedData);
+      } catch (error) {
+        console.error("Error loading data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleAddExpense = (expense) => {
     setExpenses((prevExpenses) => [...prevExpenses, expense]);
@@ -96,7 +111,7 @@ export default function Form() {
   return (
     <div className="main">
       <ExpenseForm onAddExpense={handleAddExpense} />
-      <div  className="child1">
+      <div className="child1">
         {expenses.map((expense, id) => (
           <ExpenseItem
             key={id}
@@ -104,6 +119,19 @@ export default function Form() {
             onDeleteExpense={handleDeleteExpense}
           />
         ))}
+      </div>
+
+      <div className="section__page">
+        <h3>Your Expenses:</h3>
+        <ul className="sectionpage__div1">
+          {data.map((val, index) => (
+            <li className="mylisting" key={index}>
+              <p>Total Spend: ${val.amount}</p>
+              <p>On date {val.when}</p>
+              <p>Spent At: {val.where}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

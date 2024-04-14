@@ -2,14 +2,13 @@ import React from 'react';
 import Header from '../Header';
 import './contact.scss'; 
 
-import "../../../Styles/App.css";
 
 
 const Contact = () => {
   return (
     <>
       <div className="main__page">
-        <Header />
+        {/* <Header /> */}
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
         <h1 className="hero__title">Contact Us</h1>

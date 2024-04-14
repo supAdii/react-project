@@ -5,36 +5,30 @@ import mainLogo from "./mainLogo.png";
 
 import "../../../Styles/App.css";
 
-
 export default function Header() {
   return (
     <>
       <header className="header">
         <div className="header-container">
-          <h1 className="logo"><img src={mainLogo} alt= "Main Logo" style={{ 
-              maxWidth: '80%', 
-              height: 'auto', 
-              maxHeight: '200px', 
-              marginTop: '13px',
-              marginLeft: '-50px',
-            }} 
- /></h1>
+          <div className="imageDiv">
+          <img src={mainLogo} alt="Main Logo" className="logo"/>
+          </div>
           <nav className="nav-menu">
             <ul>
               <li>
                 <Link to="/"> Home</Link>
               </li>
               <li>
-              <Link to="/form"> Add</Link>
+                <Link to="/form"> Add</Link>
               </li>
               <li>
-              <Link to="/about"> About</Link>
+                <Link to="/about"> About</Link>
               </li>
               <li>
-              <Link to="/contact"> Contact</Link>
+                <Link to="/contact"> Contact</Link>
               </li>
               <li>
-              <Link to="/service"> Service</Link>
+                <Link to="/service"> Service</Link>
               </li>
             </ul>
           </nav>

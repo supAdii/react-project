@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 body {
+  font-family: "Montserrat", sans-serif;
   color: rgba(164, 167, 171, 0.721);
+
 }
 
 /* mainpage */
@@ -12,40 +16,39 @@ body {
 }
 
 .section__page {
-  height: 80dvh;
+  /* height: 80dvh; */
   overflow: hidden;
   background: rgb(29, 29, 28);
   color: white;
   font-weight: bold;
-  padding: 10%;
+  padding: 4%;
   display: grid;
-  gap: 8em;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 4em;
+  grid-template-rows: 0 40em;
 }
 
 .sectionpage__div1 {
   background-color: #ffffff0c;
-  border-radius: 10px;
-  display: flex;
-  gap: 1em;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2em;
-  font-size: 24px;
+    border-radius: 10px;
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    padding: 2em;
+    flex-wrap: wrap;
+    list-style: none;
 }
 
 .mylisting {
-  border-radius: 2px solid rgb(255, 255, 255);
-  padding: 2em;
+  padding: 2%;
   background-color: #ffffff07;
   border-radius: 10px;
-  display: grid;
-  gap: 1.5em;
   line-height: 1.2;
-  letter-spacing: 2;
+  flex-basis: 40%;
+  /* border-radius: 2px solid rgb(255, 255, 255); */
+  /* display: grid; */
+  /* gap: 1.5em; */
+  /* letter-spacing: 2; */
 }
-
 
 .hero__title {
   color: rgb(240, 248, 255);
@@ -164,7 +167,6 @@ body {
     0px 300px 0px rgb(240, 248, 255);
   /* animation: shake 20s ease-in-out infinite; */
 }
-
 
 @keyframes shake {
   0% {

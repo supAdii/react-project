@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <div className="main__page">
-        <Header />
+        {/* <Header /> */}
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
         <h1 className="hero__title">About Us</h1>
