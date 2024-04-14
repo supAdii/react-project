@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import * as database from "../../../database";
+import React from "react";
 import expenseTrackerLogo from "./fullLogo.png";
-import "../../../Styles/App.css"
+import "../../../Styles/App.css";
 
 export default function HomePage() {
-
-
   return (
     <>
       <div className="main__page">

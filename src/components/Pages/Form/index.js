@@ -30,15 +30,18 @@ const ExpenseForm = ({ onAddExpense }) => {
           type="text"
           value={where}
           onChange={(e) => setWhere(e.target.value)}
+          placeholder="Enter where you spent your money."
+          required
         />
       </div>
 
       <div className="input__data">
-        <label>Date:</label>
+        <label>Choose the date:</label>
         <input
           type="date"
           value={when}
           onChange={(e) => setWhen(e.target.value)}
+          required
         />
       </div>
 
@@ -50,6 +53,8 @@ const ExpenseForm = ({ onAddExpense }) => {
           step="0.01"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+          placeholder="Enter how much you spent."
+          required
         />
       </div>
 
@@ -70,12 +75,12 @@ const ExpenseItem = ({ expense, onDeleteExpense }) => {
       <h2>You spent on: {where}</h2>
       <p>Date: {when}</p>
       <p>Amount Spent: ${amount}</p>
-      <button onClick={handleDelete}>Delete Data</button>
+      <button onClick={handleDelete}>Delete Expense</button>
     </div>
   );
 };
 
-export default function Form() {
+export default function Form({ id }) {
   const [expenses, setExpenses] = useState([]);
   const [data, setData] = useState([]);
 
@@ -100,12 +105,17 @@ export default function Form() {
     console.log("Saved data", expense);
   };
 
-  const handleDeleteExpense = (id) => {
+  const handleDeleteExpense = () => {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== id)
     );
     database.deleteFromDb(id);
-    console.log("The id that was removed is:", id);
+  };
+
+  const handleDataDelete = (id) => {
+    setData((prevData) => prevData.filter((item) => item.id !== id));
+    // Delete from database
+    database.deleteFromDb(id);
   };
 
   return (
@@ -129,6 +139,7 @@ export default function Form() {
               <p>Total Spend: ${val.amount}</p>
               <p>On date {val.when}</p>
               <p>Spent At: {val.where}</p>
+              <button onClick={handleDataDelete}>Delete</button>
             </li>
           ))}
         </ul>

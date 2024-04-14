@@ -1,6 +1,5 @@
-import { collection, addDoc } from "firebase/firestore";
 import { db } from "./config";
-import { doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { doc, deleteDoc, addDoc, collection } from "firebase/firestore";
 
 export async function write(data) {
   console.log("Saving..", data);
@@ -13,23 +12,8 @@ export async function write(data) {
   }
 }
 
-export async function update(id, data) {
-  try {
-    const docRef = doc(db, "spending", id);
-
-    await updateDoc(docRef, data);
-    console.log("This is the id that should be updated:", id);
-    console.log("This is what should be updated", data);
-  } catch {
-    throw new Error("Something went wrong.");
-  }
-}
-
 export async function deleteFromDb(id) {
-  try{
-    await deleteDoc(doc(db, "spending", id));
-  }
-  catch{
-    throw new Error("Something went wrong.");
-  }
+  console.log("The id to delete is:", id);
+
+  await deleteDoc(doc(db, "spending", id));
 }
