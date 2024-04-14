@@ -1,22 +1,15 @@
 import React from 'react';
-import Header from '../Header';
-
+import "./services.css";
 
 
 const Services = () => {
   return (
     <>
-      <div className="main__page">
-        {/* <Header /> */}
-        <div className="hero_rectangle_1"></div>
-        <div className="hero_rectangle_2"></div>
-        <h1 className="hero__title">Our Services</h1>
-      </div>
       <div className="section__page">
-        <div className="main">
+        <div className="main__honi">
           <div className="content-box">
-            <h2>Services We Offer</h2>
-            <div className="service-item">
+            <h2 className='puti'>Services We Offer</h2>
+            <div className="ser_item">
               <h3>Barcode Scanner for Receipts</h3>
               <p>
                 Use a built-in barcode scanner to quickly capture and store receipt information. 

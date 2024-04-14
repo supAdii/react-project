@@ -5,23 +5,14 @@
     width: 200px; /* Decreased width */
     height: 100px; /* Decreased height */
     background-color: #76885b;
-    z-index: 11;
-  }
-  
-  .hero__title {
-    position: absolute; 
-    left: 57%; 
-    top: 40%; 
-    transform: translate(-50%, -50%) rotate(-90deg); 
-    margin-left: -37%;
-    margin-top: -6%;
-  
-    color: #333; 
+    z-index: 1;
   }
   
   
   .content_box {
     display: grid; 
+    grid-template-rows: 2fr 1fr;
+    grid-template-columns: 1fr 1fr 4fr;
     height: 60vh;
     padding: 20px;
     font-size: 16px;
@@ -50,3 +41,7 @@
     text-decoration: underline;
   }
   
+
+  h3 {
+    color: white;
+  }

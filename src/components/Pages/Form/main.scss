@@ -1,9 +1,10 @@
 form {
   background-color: #ffffff0c;
-  padding: 4em;
+  padding: 1em;
   font-size: 24px;
   display: grid;
   gap: 2rem;
+  border-radius: 10px;
 }
 
 .output__box {
@@ -33,7 +34,7 @@ label {
 input {
   border-radius: 10px;
   height: 20px;
-  width: 8em;
+  width: 15em;
   padding: 1em;
 }
 

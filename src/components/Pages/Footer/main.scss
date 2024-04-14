@@ -12,8 +12,12 @@
     
   
     .footer-container {
-      display: flex;
-      justify-content: space-around;
+      display: grid;
+      justify-items: center;
+      align-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      padding: 4em;
     }
   
     .footer-section {
@@ -32,7 +36,7 @@
           margin-bottom: 5px;
   
           a {
-            color: #fff;
+            color: #ffffffa1;
             text-decoration: none;
           }
         }

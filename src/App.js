@@ -8,11 +8,14 @@ import HomePage from "./components/Pages/Home";
 import About from "./components/Pages/About";
 import Contact from "./components/Pages/Contact/Contact";
 import Services from "./components/Pages/Services/services";
+import DataFetchingComponent from "./datafetch";
+
 
 const App = () => {
   return (
     <>
       <Header />
+      <DataFetchingComponent />
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/form" element={<Form/>} />

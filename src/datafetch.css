@@ -1,0 +1,49 @@
+.news_box {
+    position:sticky;
+    top: 90%;
+    left: 1em;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 10px;
+    height: 10px;
+    background-color: #242121;
+    margin: 0;
+    padding: 2em;
+    display: grid;
+    place-content: center;
+    text-align: justify;
+    z-index: 122;
+    color: #242121;
+}
+
+.news_box:hover {
+    cursor: pointer;
+    width: 50%;
+    height: 90%;
+    top: 25%;
+    left: 1em;
+    border-radius: 2%;
+    color: aliceblue;
+}
+
+span {
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    display: grid;
+    width: 100;
+    height: 95px;
+    border-radius: 0 10% 50% 0;
+    left: 1px;
+    top: -10px;
+    place-content: center;
+    background-color: rgba(229, 233, 13, 0.829);
+}
+
+.new_heading {
+    margin-left: 2em;
+}
+
+.news {
+    line-height: 1.5;
+}

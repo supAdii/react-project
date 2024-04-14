@@ -2,7 +2,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  color: rgba(164, 167, 171, 0.721);
+  color: rgba(7, 8, 8, 0.721);
 }
 
 
@@ -26,7 +26,6 @@ body {
   display: grid;
   gap: 2em;
   align-items: center;
-  margin-bottom: 5%;
 }
 
 .sectionpage__div1 {
@@ -67,25 +66,26 @@ body {
   padding-top: 5%;
   padding-right: 10%;
   padding-bottom: 5%;
+  justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  place-content: center;
+  /* place-content: center; */
   background-image: url("https://icons8.com/icon/73vBxoCBN3rM/account");
 }
 
 .input__field {
+  width: 100%;
   display: grid;
-  margin-left: 5%;
   margin-bottom: 5%;
   justify-items: center;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr ;
 }
 
 .input__data {
   display: grid;
   align-items: center;
   padding: 0;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: 400px 250px;
   grid-template-rows: 4em;
 }
 
@@ -163,7 +163,7 @@ body {
 .hero_slogan1 {
   position: absolute;
   top: 5%;
-  left: -22.5%;
+  left: -20.5%;
   width: 1800px;
   font-size: 8em;
   color: rgb(240, 248, 255);
