@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Footer from "./components/Footer";
 import "./App.css";
 import * as database from "./database";
-import expenseTrackerLogo from '../src/fullLogo.png'; 
 // import { refFromURL } from "firebase/database";
 
 
 const App = () => {
-  const [data, setData] =useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedData = await database.load();
-        console.log("Loaded Data:", fetchedData);
-        setData(fetchedData);
-      } catch (error) {
-        console.error("Error loading data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <>
       <div className="main__page">
@@ -38,9 +21,7 @@ const App = () => {
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
         ---------------------------------------------------
-        <h1 className="hero__title">
-          <img src={expenseTrackerLogo} alt="Expense Tracker Logo" />
-        </h1>
+        <h1 className="hero__title">Expense Tracker</h1>
       </div>
       <div className="section__page">
         <h3>Here is the data from the db:</h3>
