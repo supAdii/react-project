@@ -56,10 +56,10 @@ const ExpenseForm = ({ onAddExpense }) => {
   );
 };
 
-const ExpenseItem = ({ expense, onDeleteExpense}) => {
-  const { id, where, amount, when } = expense;
+const ExpenseItem = ({ expense, onDeleteExpense }) => {
+  const {where, amount, when } = expense;
 
-  const handleDelete = () => {
+  const handleDelete = (id) => {
     onDeleteExpense(id);
   };
 
@@ -87,6 +87,8 @@ export default function Form() {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== id)
     );
+    // database.deleteData(id);
+    // console.log("The id that was removed is:", id);
   };
 
   return (

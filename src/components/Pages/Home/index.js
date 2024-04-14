@@ -46,7 +46,6 @@ export default function HomePage() {
           {data.map((val, index) => (
             <li key={index}>
               You spent ${val.amount} on the date {val.when} at {val.where}.
-              DAMN!!!
             </li>
           ))}
         </ul>
