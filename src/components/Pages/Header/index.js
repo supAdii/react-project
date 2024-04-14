@@ -11,7 +11,9 @@ export default function Header() {
       <header className="header">
         <div className="header-container">
           <div className="imageDiv">
-          <img src={mainLogo} alt="Main Logo" className="logo"/>
+            <Link to="/"> 
+            <img src={mainLogo} alt="Main Logo" className="logo"/> 
+            </Link>
           </div>
           <nav className="nav-menu">
             <ul>
