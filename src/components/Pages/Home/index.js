@@ -30,8 +30,9 @@ export default function HomePage() {
         </div>
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
-        ---------------------------------------------------
+        {/* --------------------------------------------------- */}
         <h1 className="hero__title">Expense Tracker</h1>
+        <img src="./fullLogo.png" alt="Logo" />
       </div>
       <div className="section__page">
         <h3>Here is the data from the db:</h3>
@@ -39,7 +40,6 @@ export default function HomePage() {
           {data.map((val, index) => (
             <li key={index}>
               You spent ${val.amount} on the date {val.when} at {val.where}.
-              DAMN!!!
             </li>
           ))}
         </ul>
