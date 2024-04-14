@@ -8,7 +8,7 @@ import * as database from "./database";
 
 // App component
 const App = () => {
-  const [data, setData] =useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,17 +40,20 @@ const App = () => {
         <h1 className="hero__title">Expense Tracker</h1>
       </div>
       <div className="section__page">
-        <h3>Here is the data from the db:</h3>
-        <ul>
-        {data.map((val, index) => (
-          <li key={index}>
-            You spent ${val.amount} on the date {val.when} at {val.where}. DAMN!!!
-          </li>
-        ))}
-      </ul>
+        <Form />
+      <div className="sectionpage__div1">
+        <h3>DATA FROM THE DATABASE:</h3>
+        <ul className="mylisting">
+          {data.map((val, index) => (
+            <li key={index}>
+              You spent ${val.amount} on the date {val.when} at {val.where}.
+              DAMN!!!
+            </li>
+          ))}
+        </ul>
+        </div>
       </div>
 
-      <Form />
       <Footer />
     </>
   );

@@ -30,5 +30,5 @@ export async function update(id, data){
 
   const docRef = doc(db, "spending", id);
   
-  await updateDoc(washingtonRef, data);
+  await updateDoc(docRef, data);
   }
