@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
-import '../Contact/contact.scss'; 
+import Header from '../../Header';
+import Footer from '../../Footer';
+import './contact.scss'; 
 
 const Contact = () => {
   return (
