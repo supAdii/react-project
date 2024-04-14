@@ -7,14 +7,12 @@ import './contact.scss';
 const Contact = () => {
   return (
     <>
-      <div className="main__page">
+      {/* <div className="main__page"> */}
         {/* <Header /> */}
         <div className="hero_rectangle_1"></div>
-        <div className="hero_rectangle_2"></div>
         <h1 className="hero__title">Contact Us</h1>
-      </div>
-      <div className="section__page">
-        <div className="main">
+      {/* </div>
+     */}
           <div className="content-box">
             
             <p>
@@ -27,8 +25,6 @@ const Contact = () => {
               <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
             </div>
           </div>
-        </div>
-      </div>
     </>
   );
 };
