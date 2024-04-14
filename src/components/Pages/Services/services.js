@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../Header';
-import Footer from '../../Footer'; 
+import Header from '../Header';
+import Footer from '../Footer'; 
 
 const Services = () => {
   return (
@@ -42,7 +42,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

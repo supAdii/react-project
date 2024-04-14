@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as database from "../../database";
+import * as database from "../../../database";
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [where, setWhere] = useState("");

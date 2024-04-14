@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from '../../Header';
-import Footer from '../../Footer';
+import Footer from '../Footer';
+import Header from '../Header';
 import './About.scss'; 
 
 const About = () => {
@@ -28,7 +28,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };
