@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import * as database from "../../../database";
+import "./main.scss";
+import "../../../Styles/App.css";
 
 const ExpenseForm = ({ onAddExpense }) => {
   const [where, setWhere] = useState("");
@@ -57,9 +59,9 @@ const ExpenseForm = ({ onAddExpense }) => {
 };
 
 const ExpenseItem = ({ expense, onDeleteExpense }) => {
-  const {where, amount, when } = expense;
+  const {id, where, amount, when } = expense;
 
-  const handleDelete = (id) => {
+  const handleDelete = () => {
     onDeleteExpense(id);
   };
 
@@ -87,8 +89,8 @@ export default function Form() {
     setExpenses((prevExpenses) =>
       prevExpenses.filter((expense) => expense.id !== id)
     );
-    // database.deleteData(id);
-    // console.log("The id that was removed is:", id);
+    database.deleteFromDb(id);
+    console.log("The id that was removed is:", id);
   };
 
   return (

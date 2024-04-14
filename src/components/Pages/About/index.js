@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../Header';
 import './About.scss'; 
+import "../../../Styles/App.css";
 
 const About = () => {
   return (

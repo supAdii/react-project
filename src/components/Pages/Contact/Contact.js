@@ -2,6 +2,9 @@ import React from 'react';
 import Header from '../Header';
 import './contact.scss'; 
 
+import "../../../Styles/App.css";
+
+
 const Contact = () => {
   return (
     <>

@@ -1,7 +1,9 @@
 import React from "react";
 import "./main.scss";
-import logo from "./Untitled@1-1920x965.png";
 import { Link } from "react-router-dom";
+
+import "../../../Styles/App.css";
+
 
 export default function Header() {
   return (
@@ -15,7 +17,7 @@ export default function Header() {
                 <Link to="/"> Home</Link>
               </li>
               <li>
-              <Link to="/form"> Add Data</Link>
+              <Link to="/form"> Add</Link>
               </li>
               <li>
               <Link to="/about"> About</Link>

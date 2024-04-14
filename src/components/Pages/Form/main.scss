@@ -1,48 +1,48 @@
-form {padding: 4em;
-    font-size: 24px;
-    display: grid;
-    gap: 2rem;
+form {
+  background-color: #ffffff0c;
+  padding: 4em;
+  font-size: 24px;
+  display: grid;
+  gap: 2rem;
 }
 
-
-.output__box{
-    background-color: #ffffff0c;
-    padding: em;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    place-content: center;
+.output__box {
+  background-color: #ffffff0c;
+  padding: em;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  place-content: center;
 }
 
 .main {
-    background-color: #ffffff0c;
-    color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 2em;
-    border-radius: 10px;
+  background-color: #ffffff0c;
+  color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2em;
+  border-radius: 10px;
 }
 
 label {
-    font-size: larger;
-    margin: 2em;
+  font-size: larger;
+  margin: 2em;
 }
 
-input{
-    border-radius: 10px;
-    height: 20px;
-    width: 8em;
-    padding: 1em;
+input {
+  border-radius: 10px;
+  height: 20px;
+  width: 8em;
+  padding: 1em;
 }
 
 button {
-    width: 40%;
-    height: 44px;
-    border-radius: 10px;
+  width: 40%;
+  height: 44px;
+  border-radius: 10px;
 }
 
 button:hover {
-
-    background-color: #ffffffc4;
-    cursor: pointer;
+  background-color: #ffffffc4;
+  cursor: pointer;
 }

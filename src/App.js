@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Pages/Header";
 import Form from "./components/Pages/Form";
 import Footer from "./components/Pages/Footer";
-import "./App.css";
+import "./Styles/App.css";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "./components/Pages/Home";
 import About from "./components/Pages/About";
@@ -20,8 +20,6 @@ const App = () => {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/service" element={<Services/>} />
       </Routes>
-      {/* <HomePage/> */}
-      {/* <Form /> */}
       <Footer />
     </>
   );

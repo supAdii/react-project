@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+import "../../../Styles/App.css";
+
+
 import * as database from "../../../database";
 
 export default function HomePage() {
