@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Footer from "./components/Footer";
 import "./App.css";
 import * as database from "./database";
+import expenseTrackerLogo from '../src/fullLogo.png'; 
 // import { refFromURL } from "firebase/database";
 
 
@@ -37,7 +38,9 @@ const App = () => {
         <div className="hero_rectangle_1"></div>
         <div className="hero_rectangle_2"></div>
         ---------------------------------------------------
-        <h1 className="hero__title">Expense Tracker</h1>
+        <h1 className="hero__title">
+          <img src={expenseTrackerLogo} alt="Expense Tracker Logo" />
+        </h1>
       </div>
       <div className="section__page">
         <h3>Here is the data from the db:</h3>

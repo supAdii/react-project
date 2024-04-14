@@ -141,6 +141,8 @@ input {
   /* animation: shake 20s ease-in-out infinite; */
 }
 
+
+
 @keyframes shake {
   0% {
     transform: rotate(0deg);
